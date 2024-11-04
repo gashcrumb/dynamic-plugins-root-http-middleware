@@ -43,23 +43,27 @@ export class SimpleChatClient implements SimpleChatApi {
 
   async postMessage(options: PostMessageOptions): Promise<void> {
     const { discoveryApi, fetchApi, identityApi, pluginId } = this;
-    const baseUrl = await discoveryApi.getBaseUrl(pluginId);
+    const { message, useProxy } = options;
+    const baseUrl = useProxy
+      ? '/api/proxy/add-test-header'
+      : await discoveryApi.getBaseUrl(pluginId);
+    console.log("Sending message to: ", baseUrl);
     const nickname =
       (await identityApi.getProfileInfo()).displayName || 'guest';
-    const body = JSON.stringify({ ...options, nickname });
+    const body = JSON.stringify({ message, nickname });
     const headers = await getAuthorizationHeader(identityApi);
     const response = await fetchApi.fetch(baseUrl, {
       headers,
       method: 'POST',
       body,
     });
-    const data = await response.body;
+    const data = await response.text();
     if (!response.ok) {
       throw new Error(`${data}`);
     }
     return;
   }
-  
+
   async getMessages(_options: GetMessagesOptions): Promise<GetMessagesResult> {
     const { discoveryApi, fetchApi, identityApi, pluginId } = this;
     const baseUrl = await discoveryApi.getBaseUrl(pluginId);

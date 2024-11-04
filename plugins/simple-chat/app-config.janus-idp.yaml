@@ -9,4 +9,4 @@ dynamicPlugins:
           importName: SimpleChatPage
           menuItem:
             text: 'Simple Chat'
-            icon: chatIcon
+  

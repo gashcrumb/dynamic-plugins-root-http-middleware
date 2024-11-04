@@ -1,4 +1,4 @@
-import { MiddlewareFactory } from '@backstage/backend-app-api';
+import { MiddlewareFactory } from '@backstage/backend-defaults/rootHttpRouter';
 import { createLegacyAuthAdapters } from '@backstage/backend-common';
 import {
   DiscoveryService,
@@ -35,16 +35,20 @@ export async function createRouter(
 
   router.post('/', async (req, res) => {
     await httpAuth.credentials(req, { allow: ['user'] });
-    logger.info('Got request body: ' + JSON.stringify(req.body ));
     const { nickname, message } = await req.body;
+    const proxyTestHeader = req.headers['x-proxy-test-header'] as
+      | string
+      | undefined;
     messages.push({
       nickname,
       timestamp: new Date().toLocaleTimeString('en-US'),
-      message,
+      message: proxyTestHeader
+        ? `"${message}" with test header value "${proxyTestHeader}"`
+        : message,
     });
     res.end();
   });
-  
+
   router.get('/', async (req, res) => {
     await httpAuth.credentials(req, { allow: ['user'] });
     res.status(200).json({ messages });

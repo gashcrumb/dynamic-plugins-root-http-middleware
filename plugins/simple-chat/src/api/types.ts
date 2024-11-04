@@ -8,6 +8,7 @@ export type ChatMessage = {
 
 export type PostMessageOptions = {
   message: string;
+  useProxy?: boolean;
 };
 
 export type GetMessagesOptions = {};
