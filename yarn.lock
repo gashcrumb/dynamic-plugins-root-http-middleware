@@ -3223,6 +3223,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage/cli-node@npm:^0.2.9":
+  version: 0.2.9
+  resolution: "@backstage/cli-node@npm:0.2.9"
+  dependencies:
+    "@backstage/cli-common": ^0.1.14
+    "@backstage/errors": ^1.2.4
+    "@backstage/types": ^1.1.1
+    "@manypkg/get-packages": ^1.1.3
+    "@yarnpkg/parsers": ^3.0.0
+    fs-extra: ^11.2.0
+    semver: ^7.5.3
+    zod: ^3.22.4
+  checksum: 39a3332cc0dd732a51726d803c322ec7423c6380e494b3ef91d5c71aabd60626bc355ede3fbb8a4da4714806c4663b6bef109bb6c7100160452c0e71620dac9b
+  languageName: node
+  linkType: hard
+
 "@backstage/cli@npm:^0.26.3":
   version: 0.26.10
   resolution: "@backstage/cli@npm:0.26.10"
@@ -3740,6 +3756,16 @@ __metadata:
     "@backstage/types": ^1.1.1
     serialize-error: ^8.0.1
   checksum: ed988b2d3594a2fe989dd45fe197154e522194e30602552224e4a2bf6ed895c671e7f832d5c01b8e24881484698ccf3abaf2930dba5374bccfdaa283f4850fb9
+  languageName: node
+  linkType: hard
+
+"@backstage/eslint-plugin@npm:^0.1.10":
+  version: 0.1.10
+  resolution: "@backstage/eslint-plugin@npm:0.1.10"
+  dependencies:
+    "@manypkg/get-packages": ^1.1.3
+    minimatch: ^9.0.0
+  checksum: 1952a39e1ba5ef1c71cb48ba7908c4e545fc20eba962a2481d574f80b998f21d1ced7602b04415ba4b5ae1aa52c289c307b9d3f0950eeedecc895dcbb0c878a4
   languageName: node
   linkType: hard
 
@@ -5689,16 +5715,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@janus-idp/cli@portal:/home/gashcrumb/Source/janus-idp/backstage-plugins/packages/cli::locator=root%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@janus-idp/cli@portal:/home/gashcrumb/Source/janus-idp/backstage-plugins/packages/cli::locator=root%40workspace%3A."
+"@janus-idp/cli@npm:1.18.0":
+  version: 1.18.0
+  resolution: "@janus-idp/cli@npm:1.18.0"
   dependencies:
     "@backstage/cli-common": ^0.1.14
-    "@backstage/cli-node": ^0.2.8
+    "@backstage/cli-node": ^0.2.9
     "@backstage/config": ^1.2.0
     "@backstage/config-loader": ^1.9.1
     "@backstage/errors": ^1.2.4
-    "@backstage/eslint-plugin": ^0.1.9
+    "@backstage/eslint-plugin": ^0.1.10
     "@backstage/types": ^1.1.1
     "@manypkg/get-packages": ^1.1.3
     "@openshift/dynamic-plugin-sdk-webpack": ^3.0.0
@@ -5758,8 +5784,9 @@ __metadata:
       optional: true
   bin:
     janus-cli: bin/janus-cli
+  checksum: 5ecda5345067fdaa79e58ae7fa2562709beeadd8cf4ac2b5c7b1895f52aeee8cd9a8b9edb268a75565e73e44c599d9c66a44cea849517302ccfc25b70874e36d
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@jest/console@npm:^29.7.0":
   version: 29.7.0
@@ -14322,6 +14349,23 @@ __metadata:
   checksum: 9636a027345de3dd3c801594d01a7c73d9ce260019538beb1ee650bba7544e72f40a4d4902b52e1ab283dc32a06f210d42748773af02ff15e3064a9659deab7f
   languageName: node
   linkType: hard
+
+"dynamic-plugins-example-root-http-middleware@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "dynamic-plugins-example-root-http-middleware@workspace:."
+  dependencies:
+    "@backstage/cli": ^0.27.1
+    "@backstage/e2e-test-utils": ^0.1.1
+    "@janus-idp/cli": 1.18.0
+    "@playwright/test": ^1.32.3
+    "@spotify/prettier-config": ^12.0.0
+    concurrently: ^8.0.0
+    lerna: ^7.3.0
+    node-gyp: ^9.0.0
+    prettier: ^2.3.2
+    typescript: ~5.3.0
+  languageName: unknown
+  linkType: soft
 
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
@@ -25454,23 +25498,6 @@ __metadata:
   checksum: 54cde921e763017ce952ba76ec77d58dd9c01e3536c3be628d4af8c59d9b2f0e1e6a11b30fda44845c7b74098646cd972feb3bcd2f4a35d3293366f2eeb0a39e
   languageName: node
   linkType: hard
-
-"root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root@workspace:."
-  dependencies:
-    "@backstage/cli": ^0.27.1
-    "@backstage/e2e-test-utils": ^0.1.1
-    "@janus-idp/cli": ^1.15.1
-    "@playwright/test": ^1.32.3
-    "@spotify/prettier-config": ^12.0.0
-    concurrently: ^8.0.0
-    lerna: ^7.3.0
-    node-gyp: ^9.0.0
-    prettier: ^2.3.2
-    typescript: ~5.3.0
-  languageName: unknown
-  linkType: soft
 
 "rtl-css-js@npm:^1.16.1":
   version: 1.16.1
