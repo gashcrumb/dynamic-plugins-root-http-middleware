@@ -1,7 +1,10 @@
 #!/bin/bash
 
 PLUGIN_IMAGE_TAG=${PLUGIN_IMAGE_TAG:-localhost:5000/${USER}/example-root-http-middleware:0.0.1}
-APP_IMAGE=quay.io/janus-idp/backstage-showcase:next
+# for now use the PR image that supports this
+APP_IMAGE=quay.io/janus-idp/backstage-showcase:pr-1881
+#APP_IMAGE=quay.io/janus-idp/backstage-showcase:next
+
 # Uncomment the following to use an RHDH image
 # APP_IMAGE=quay.io/rhdh/rhdh-hub-rhel9:next
 
