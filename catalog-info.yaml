@@ -1,13 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: dynamic-plugins-getting-started
-  description: An example of a Backstage application.
-  # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  name: dynamic-plugin-root-http-middleware
+  description: An example set of dynamic plugins that show how to add custom middleware to RHDH
 spec:
-  type: website
-  owner: john@example.com
+  type: example
+  owner: gashcrumb@gmail.com
   lifecycle: experimental
