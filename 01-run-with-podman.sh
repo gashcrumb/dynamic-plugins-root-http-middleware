@@ -16,7 +16,7 @@ podman pull ${APP_IMAGE}
 podman run \
     -e LOG_LEVEL=info \
     -e HOSTNAME=${HOSTNAME:-localhost} \
-    -e DISABLE_STATIC_ROOT_HTTP_ROUTER_CONFIG=true \
+    -e ENABLE_CORE_ROOTHTTPROUTER_OVERRIDE=true \
     ${PLUGIN_MOUNT} \
     -v ./app-config.yaml:/opt/app-root/src/app-config.yaml:Z \
     -p 7007:7007 \

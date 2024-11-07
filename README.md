@@ -7,7 +7,7 @@
 
 This example shows how a dynamic plugin can install a custom middleware function into the root HttpRouterService used in Red Hat Developer Hub to handle lower-level cross-cutting concerns such as handling custom HTTP headers.  This functionality is available in version 1.4 of Developer Hub but disabled by default.
 
-The ability to install a custom middleware function from a dynamic plugin requires setting the `DISABLE_STATIC_ROOT_HTTP_ROUTER_CONFIG` environment variable to `true`.  If this variable is not set then the Developer Hub backend will exit with a duplicate service implementation error for the `core.rootHttpRouter` service.
+The ability to install a custom middleware function from a dynamic plugin requires setting the `ENABLE_CORE_ROOTHTTPROUTER_OVERRIDE` environment variable to `true`.  If this variable is not set then the Developer Hub backend will exit with a duplicate service implementation error for the `core.rootHttpRouter` service.
 
 ### Prerequisites
 
@@ -74,7 +74,7 @@ DYNAMIC_PLUGINS_ROOT=/path/to/rhdh-local/local-plugins/dir yarn package-dynamic-
 The command will export the dynamic plugins and print the appropriate configuration that you can copy into `configs/dynamic-plugins.yaml`.  This example also needs the configuration from [app-config.yaml](./app-config.yaml) to work properly, this can be copied into `configs/app-config.local.yaml`.  Finally add the following environment variable to your [rhdh-local](https://github.com/redhat-developer/rhdh-local) `.env` file
 
 ```bash
-DISABLE_STATIC_ROOT_HTTP_ROUTER_CONFIG=true
+ENABLE_CORE_ROOTHTTPROUTER_OVERRIDE=true
 ```
 
 ### An Example Interaction
@@ -83,4 +83,4 @@ Once Developer Hub has started it should be available at [http://localhost:7007]
 
 ![screenshot of example run](./screenshots/example-screenshot.png)
 
-To see how Developer Hub will reject the attempt to install a root HTTP router service factory configuration, remove the `DISABLE_STATIC_ROOT_HTTP_ROUTER_CONFIG` environment variable, either [from here](./01-run-with-podman.sh#L19) if using podman or from the `.env` file if using [rhdh-local](https://github.com/redhat-developer/rhdh-local) and restart Developer Hub.
+To see how Developer Hub will reject the attempt to install a root HTTP router service factory configuration, remove the `ENABLE_CORE_ROOTHTTPROUTER_OVERRIDE` environment variable, either [from here](./01-run-with-podman.sh#L19) if using podman or from the `.env` file if using [rhdh-local](https://github.com/redhat-developer/rhdh-local) and restart Developer Hub.
