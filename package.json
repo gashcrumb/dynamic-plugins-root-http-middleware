@@ -18,8 +18,8 @@
     "lint:all": "backstage-cli repo lint",
     "prettier:check": "prettier --check .",
     "new": "backstage-cli new --scope internal",
-    "deploy-plugins-local": "janus-cli package package-dynamic-plugins --force-export --export-to ${DYNAMIC_PLUGINS_ROOT:-./deploy}",
-    "package-dynamic-plugins": "janus-cli package package-dynamic-plugins --force-export --tag ${PLUGIN_IMAGE_TAG:-localhost:5000/${USER}/example-root-http-middleware:0.0.1}"
+    "export-local": "janus-cli package package-dynamic-plugins --force-export --export-to ${DYNAMIC_PLUGINS_ROOT:-./deploy}",
+    "package-dynamic-plugins": "janus-cli package package-dynamic-plugins --force-export --tag ${PLUGIN_IMAGE_TAG:-localhost:5000/${USER}/example-root-http-middleware:latest}"
   },
   "workspaces": {
     "packages": [

@@ -55,7 +55,7 @@ yarn package-dynamic-plugins
 ```
 
 ```terminal
-bash 01-run-with-podman.sh
+bash run-with-podman.sh
 ```
 
 Use a custom image tag for the plugin via the `PLUGIN_IMAGE_TAG` environment variable.  The script to run the container is set up to use the configuration in [app-config.yaml](./app-config.yaml).
@@ -68,7 +68,7 @@ Use a custom image tag for the plugin via the `PLUGIN_IMAGE_TAG` environment var
 To run this example using [rhdh-local](https://github.com/redhat-developer/rhdh-local) first run the following to export the dynamic plugins to it's `local-plugins` directory:
 
 ```terminal
-DYNAMIC_PLUGINS_ROOT=/path/to/rhdh-local/local-plugins/dir yarn package-dynamic-plugins
+DYNAMIC_PLUGINS_ROOT=/path/to/rhdh-local/local-plugins/dir yarn export-local
 ```
 
 The command will export the dynamic plugins and print the appropriate configuration that you can copy into `configs/dynamic-plugins.yaml`.  This example also needs the configuration from [app-config.yaml](./app-config.yaml) to work properly, this can be copied into `configs/app-config.local.yaml`.  Finally add the following environment variable to your [rhdh-local](https://github.com/redhat-developer/rhdh-local) `.env` file
@@ -83,4 +83,4 @@ Once Developer Hub has started it should be available at [http://localhost:7007]
 
 ![screenshot of example run](./screenshots/example-screenshot.png)
 
-To see how Developer Hub will reject the attempt to install a root HTTP router service factory configuration, remove the `ENABLE_CORE_ROOTHTTPROUTER_OVERRIDE` environment variable, either [from here](./01-run-with-podman.sh#L19) if using podman or from the `.env` file if using [rhdh-local](https://github.com/redhat-developer/rhdh-local) and restart Developer Hub.
+To see how Developer Hub will reject the attempt to install a root HTTP router service factory configuration, remove the `ENABLE_CORE_ROOTHTTPROUTER_OVERRIDE` environment variable, either [from here](./run-with-podman.sh#L19) if using podman or from the `.env` file if using [rhdh-local](https://github.com/redhat-developer/rhdh-local) and restart Developer Hub.
