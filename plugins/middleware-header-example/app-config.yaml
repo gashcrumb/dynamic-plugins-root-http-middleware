@@ -1,0 +1,7 @@
+proxy:
+  endpoints:
+    '/add-test-header':
+      target: http://${HOSTNAME}:7007/api/simple-chat
+      credentials: forward
+      headers:
+        'x-proxy-test-header': 'hello!'

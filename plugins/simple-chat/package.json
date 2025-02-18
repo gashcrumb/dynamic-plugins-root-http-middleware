@@ -25,11 +25,11 @@
     "export-dynamic": "janus-cli package export-dynamic-plugin --clean"
   },
   "dependencies": {
-    "@backstage/core-components": "0.15.1",
-    "@backstage/core-plugin-api": "1.10.0",
-    "@backstage/theme": "0.6.0",
+    "@backstage/core-components": "0.16.3",
+    "@backstage/core-plugin-api": "1.10.3",
+    "@backstage/theme": "0.6.3",
     "@material-ui/lab": "4.0.0-alpha.61",
-    "@mui/material": "5.15.21",
+    "@mui/material": "5.16.14",
     "react-use": "^17.2.4"
   },
   "peerDependencies": {
@@ -38,11 +38,12 @@
     "react-router-dom": "^6.0.0"
   },
   "devDependencies": {
-    "@backstage/cli": "0.28.2",
-    "@backstage/core-app-api": "1.15.1",
-    "@backstage/dev-utils": "1.1.2",
-    "@backstage/plugin-proxy-backend": "0.5.7",
+    "@backstage/cli": "0.29.6",
+    "@backstage/core-app-api": "1.15.4",
+    "@backstage/dev-utils": "1.1.7",
+    "@backstage/plugin-proxy-backend": "0.5.11",
     "@backstage/test-utils": "1.7.0",
+    "@janus-idp/cli": "3.2.0",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
